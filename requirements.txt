@@ -32,3 +32,4 @@ streamlit-authenticator
 streamlit-lottie
 streamlit-option-menu
 streamlit-quill
+firebase_admin
