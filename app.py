@@ -1,16 +1,29 @@
 import pyrebase
 import streamlit as st
+import streamlit as st
 from datetime import datetime
-import requests
-import os
 import google.generativeai as genai
 from dotenv import load_dotenv, find_dotenv
 import io
+import os
 import json
 from PIL import Image
 from streamlit_option_menu import option_menu
 from streamlit_lottie import st_lottie 
 import base64
+import firebase_admin
+from firebase_admin import credentials, firestore
+try:
+    firebase_admin.initialize_app()
+except ValueError:
+    pass  # Firebase app is already initialized
+
+# Check if Firebase app is already initialized
+if not firebase_admin._apps:
+    # Initialize Firebase Admin SDK
+    cred = credentials.Certificate("C:/Users/91932/Desktop/TYDS LAST/FINAL PROJECT/chit-chat-image-firebase-adminsdk-6t9gj-f1e89700d5.json")
+    firebase_admin.initialize_app(cred)
+    db = firestore.client()
 # Firebase configuration
 firebaseConfig = {
   'apiKey': "AIzaSyBc1T2F81JKKHPxZSd5psqXU-r3sdunIHs",
