@@ -1,3 +1,9 @@
+import logging
+
+try:
+    from oauth2client import _pycrypto_crypt
+except Exception as e:
+    logging.error(f"Failed to import _pycrypto_crypt: {e}")
 import pyrebase
 import streamlit as st
 from datetime import datetime
